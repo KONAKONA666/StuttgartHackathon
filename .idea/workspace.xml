@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb734750-73ba-4e52-aa93-6a6042843c85" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/data/traffic/.~lock.LSA 01.xls#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Car_Parking_Data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/Car_Parking_Data.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,11 +13,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src_traffic/parking_evaluation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+            <state relative-caret-position="360">
+              <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/src_time/time_to_minutes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -45,16 +58,7 @@
         <option value="$PROJECT_DIR$/arrival/arrival_information.py" />
         <option value="$PROJECT_DIR$/src_traffic/traffic_evaluation.py" />
         <option value="$PROJECT_DIR$/src_traffic/parking_evaluation.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/StuttgartHackathon.iml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/data/src_time/time_to_minutes.py" />
       </list>
     </option>
   </component>
@@ -69,6 +73,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -90,7 +95,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -112,7 +116,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.erstesfile">
+  <component name="RunManager" selected="Python.time_to_minutes">
     <configuration name="arrival_information" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="StuttgartHackathon" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -157,6 +161,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="time_to_minutes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="StuttgartHackathon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data/src_time" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/src_time/time_to_minutes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="traffic_evaluation" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="StuttgartHackathon" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -183,9 +209,11 @@
       <item itemvalue="Python.erstesfile" />
       <item itemvalue="Python.arrival_information" />
       <item itemvalue="Python.traffic_evaluation" />
+      <item itemvalue="Python.time_to_minutes" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.time_to_minutes" />
         <item itemvalue="Python.traffic_evaluation" />
         <item itemvalue="Python.arrival_information" />
       </list>
@@ -204,14 +232,17 @@
       <workItem from="1572074908565" duration="1094000" />
       <workItem from="1572076016769" duration="132000" />
       <workItem from="1572076162081" duration="15363000" />
+      <workItem from="1572121678721" duration="41000" />
+      <workItem from="1572121746581" duration="298000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16589000" />
+    <option name="totallyTimeSpent" value="16928000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14333148" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -219,7 +250,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32852387" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3973363" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3973363" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -232,7 +263,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.5124516" />
+      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.11787493" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
     <layout-to-restore>
@@ -280,13 +311,19 @@
           <line>14</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data/src_time/time_to_minutes.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/StuttgartHackathon$arrival_information.coverage" NAME="arrival_information Coverage Results" MODIFIED="1572083915318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/arrival" />
-    <SUITE FILE_PATH="coverage/StuttgartHackathon$erstesfile.coverage" NAME="erstesfile Coverage Results" MODIFIED="1572096224909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src_traffic" />
+    <SUITE FILE_PATH="coverage/StuttgartHackathon$erstesfile.coverage" NAME="erstesfile Coverage Results" MODIFIED="1572122013707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src_traffic" />
     <SUITE FILE_PATH="coverage/StuttgartHackathon$traffic_evaluation.coverage" NAME="traffic_evaluation Coverage Results" MODIFIED="1572096098690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src_traffic" />
+    <SUITE FILE_PATH="coverage/StuttgartHackathon$time_to_minutes.coverage" NAME="time_to_minutes Coverage Results" MODIFIED="1572122046035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data/src_time" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/erstesfile.py" />
@@ -311,23 +348,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parking/parking_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/arrival/arrival_information.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/parking/parking_data.py" />
+    <entry file="file://$PROJECT_DIR$/arrival/arrival_information.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -361,8 +383,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src_traffic/parking_evaluation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+        <state relative-caret-position="360">
+          <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/src_time/time_to_minutes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
