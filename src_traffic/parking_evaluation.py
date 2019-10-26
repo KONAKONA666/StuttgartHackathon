@@ -56,7 +56,7 @@ def all_parksituation():
     with open('../data/Car_Parking_Data.csv', mode='w') as csv_file:
         parking_data = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         parking_data.writerow(["Timestamp","P00", "P02", "P03", "P03", "P04", "P04", "P05", "P06", "P07", "P08", "P09", "P11", "P2021", "P2223", "P25", "P26"])
-        for x in time_interval:
+        for x in time_interval[2:]:
             P00_p = int(alle_werte[i][1]) / int(alle_werte[0][1])
             #alternativ int(P02[i]) / int(P02[0])
 
@@ -86,9 +86,10 @@ def all_parksituation():
 
             P26_p = int(alle_werte[i][16]) / int(alle_werte[0][16])
 
+            print([x, P00_p, P02_p, P03_p, P03_p, P04_p, P04_p, P05_p, P06_p, P07_p, P08_p, P09_p, P11_p, P2021_p, P2223_p, P25_p, P26_p])
             parking_data.writerow([x, P00_p, P02_p, P03_p, P03_p, P04_p, P04_p, P05_p, P06_p, P07_p, P08_p, P09_p, P11_p, P2021_p, P2223_p, P25_p, P26_p])
             i += 1
-            if i < 97:
+            if i > 97:
                 break
 
 
