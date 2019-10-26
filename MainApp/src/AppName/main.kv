@@ -15,11 +15,25 @@
             pos_hint : {"center_x":0.5,"center_y":0.65}
             normal_color :[0.9 , 0.9 , 0.9 , .8]
             foreground_color : [0.1 , 0.1 , 0.1 , 1]
+        MDTextFieldRound:
+            id : flight_date_field
+            icon_left: "calendar"
+            icon_type: "left"
+            hint_text: "Flight date"
+            size_hint : (0.4 , 0.05)
+            pos_hint : {"center_x":0.5,"center_y":0.55}
+            normal_color :[0.9 , 0.9 , 0.9 , .8]
+            foreground_color : [0.1 , 0.1 , 0.1 , 1]
+            on_focus: app.show_date_picker()
+
         MDRoundFlatButton:
             text : "Guide me"
             size_hint : (0.3 , 0.07)
-            pos_hint:{"center_x":0.5,"center_y":0.55}
-            on_press : root.manager.current = "GeneralOverViewScreen"
+            pos_hint:{"center_x":0.5,"center_y":0.45}
+            on_press :
+                app.set_flight_information()
+                app.set_data()
+                root.manager.current = "GeneralOverViewScreen"
 
 <GeneralOverViewScreen>:
 
@@ -37,12 +51,14 @@
             pos_hint : {"center_x":0.5,"bottom":0.1}
 
         MDLabel:
+            id : start_time_label
             text : "Start time"
             font_style: "Caption"
             size : (150 , 50)
             pos_hint : {"center_x": 0.55, "center_y": 0.075}
 
         MDLabel:
+            id : end_time_label
             text : "End time"
             font_style: "Caption"
             size : (150 , 50)
