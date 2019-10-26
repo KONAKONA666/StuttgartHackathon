@@ -57,9 +57,11 @@ class MainApp(App):
 
         # get end time = departure time
         departure_time = self.data_manager.get_departure().strftime("%H:%M")
+        trip_start_time = self.data_manager.get_trip_start().strftime("%H:%M")
 
         # set or calculate the time
         self.main_tabs.ids.end_time_label.text = departure_time
+        self.main_tabs.ids.start_time_label.text = trip_start_time
 
     def build(self):
 

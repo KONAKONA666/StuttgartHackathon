@@ -9,6 +9,17 @@ class DataManager():
     # id of the flight
     amsID = None
 
+    # ids of waiting times
+    JOURNEY = 0
+    PARKING = 1
+    CHECK_IN = 2
+    SECURITY = 3
+    PERSONAL = 4
+    BOARDING = 5
+
+    # lists of waiting time in each station
+    waiting_times = [0,10,0,20,0,0]
+
     def get_departure(self):
 
         URL = "http://fsg-datahub.azure-api.net/legacy/Apps/AirportSTR/Flights/GetDeparture/"+str(self.amsID)
@@ -23,6 +34,15 @@ class DataManager():
         return departure
 
         #datetime.datetime.strptime(time_of_flight, '%d-%m-%Y').date()
+
+    def get_trip_start(self):
+
+        trip_start = self.get_departure()
+
+        for wait in self.waiting_times:
+            trip_start = trip_start - datetime.timedelta(minutes = wait)
+
+        return trip_start
 
 
     def set_flight(self, flight_number, time_of_flight):
