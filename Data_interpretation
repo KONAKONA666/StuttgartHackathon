@@ -1,0 +1,114 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+from datetime import datetime
+
+curr_path = os.getcwd()
+curr_path = curr_path.replace('\\', '/')
+Flight_plan_path = curr_path + '/data/1_Flight_Plan_Preview.csv'
+Departed_Flight_Plan_path = curr_path + '/data/2_Departed_Flight_Plan.xlsx'
+
+Flight_Plan_data = pd.read_csv(Flight_plan_path, sep = ';', error_bad_lines=False)
+Flight_Plan_data = Flight_Plan_data.sort_values(by=['STTIME'])
+
+Departed_Flight_Plan = pd.read_excel(Departed_Flight_Plan_path, sep=';', error_bad_lines = False)
+Departed_Flight_Plan = Departed_Flight_Plan.sort_values(by=['AT'])
+
+Arriving_Flight_data = Departed_Flight_Plan.dropna(subset=['BELT_FIRST', 'BELT_LAST'])
+Arriving_Flight_data = Arriving_Flight_data.reset_index()
+#%%
+Database_path_Saturday = curr_path + '/Data/Database/Samstag/'
+Database_path_Saturday_Arrival = Database_path_Saturday + 'Arrival_Airport.xlsx'
+Database_path_Saturday_Departure = Database_path_Saturday + 'Departure_Airport.xlsx'
+
+Arrival_time = pd.read_excel(Database_path_Saturday_Arrival)
+Departure_time = pd.read_excel(Database_path_Saturday_Departure)
+
+#%%
+test = Arriving_Flight_data.iloc[0]['BELT_FIRST']
+belt_time_first = np.array(Arriving_Flight_data.BELT_FIRST)
+belt_time_last = np.array(Arriving_Flight_data.BELT_LAST)
+
+dt_belt_time = np.array(belt_time_last- belt_time_first)
+dt_belt_time = dt_belt_time.astype('timedelta64[m]')
+print(type(dt_belt_time[0]))
+dt_belt_time =  dt_belt_time.reshape(-1, 1)
+
+arrival_time = np.array(Arriving_Flight_data.BT)
+dt_belt_last_arrival = np.array(belt_time_last - arrival_time)
+dt_belt_last_arrival = dt_belt_last_arrival.astype('timedelta64[m]')
+dt_belt_last_arrival = dt_belt_last_arrival / np.timedelta64(1, 's')  /60
+dt_belt_last_arrival = dt_belt_last_arrival.reshape(-1,1)
+dt_belt_first_arrival = np.array(belt_time_first- arrival_time)
+dt_belt_first_arrival = dt_belt_first_arrival.astype('timedelta64[m]')
+dt_belt_first_arrival = dt_belt_first_arrival / np.timedelta64(1, 's')  /60
+dt_belt_first_arrival = dt_belt_first_arrival.reshape(-1,1)
+dt_df = pd.DataFrame(dt_belt_first_arrival, columns=['DT_NO_LUGGAGE'])
+dt_luggage = pd.DataFrame(dt_belt_last_arrival, columns=['DT_LUGGAGE'])
+
+Arriving_Flight_data =  Arriving_Flight_data.join(dt_luggage)
+Arriving_Flight_data = Arriving_Flight_data.join(dt_df)
+
+#%%
+
+
+help_array = np.zeros((len(Arriving_Flight_data), 18))
+
+for k in range(6, 24):
+
+    if k < 10:
+        for i in range(0, len(Arriving_Flight_data)):
+            arrival_time = Arriving_Flight_data.iloc[i]['BT']
+            str_belt_first = str(arrival_time)
+            hour_time = ' 0' + str(k)
+            if hour_time in str_belt_first:
+               help_array[i, k-6] = 1
+            else:
+                help_array[i, k-6] = 0
+    else:
+        for i in range(1, len(Arriving_Flight_data)):
+            arrival_time = Arriving_Flight_data.iloc[i]['BT']
+            str_belt_first = str(arrival_time)
+            hour_time = ' ' + str(k)
+            if hour_time in str_belt_first:
+               help_array[i, k-6] = 1
+            else:
+                help_array[i, k-6] = 0
+
+#%%
+time_partitioning = pd.DataFrame(help_array, columns=['6', '7', '8','9', '10', '11','12', '13', '14','15', '16', '17', '18', '19', '20', '21', '22', '23'])
+
+Arrival_for_time = Arriving_Flight_data.join(time_partitioning)
+
+list_names = {}
+store_path = curr_path + '/Data/Database/'
+
+for k in range(6, 24):
+    column_name = str(k)
+    list_names[column_name] = Arrival_for_time.loc[Arrival_for_time[column_name] == 1 ]
+    store_path_file = store_path + column_name +'.csv'
+    list_names[column_name].to_csv(store_path_file, sep=';')
+
+
+#%%
+time_duration = np.ndarray((18, 2))
+for k in range(6, 24):
+    column_name = str(k)
+    delta_time_w = np.array(list_names[column_name].DT_NO_LUGGAGE)
+    delta_time_n = np.array(list_names[column_name].DT_LUGGAGE)
+    delta_time_w = delta_time_w[delta_time_w >0]
+    delta_time_n = delta_time_n[delta_time_n> 0]
+    time_duration[k-6, 0] = np.sum(delta_time_w)/delta_time_w.size
+    time_duration[k-6, 1] = np.sum(delta_time_n)/delta_time_n.size
+
+pd_time_duration = pd.DataFrame(time_duration)
+
+#%%
+import openpyxl
+store_path = curr_path + '/Data/Database/'
+file_time_duration = store_path + 'time_duration.xlsx'
+pd_time_duration.to_excel(file_time_duration)
+
+
+#%%
